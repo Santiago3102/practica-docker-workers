@@ -1,0 +1,100 @@
+Línea 001: El sistema distribuido permite procesar grandes volúmenes de datos de forma eficiente.
+Línea 002: Cada nodo del sistema opera de manera independiente pero coordinada.
+Línea 003: La tolerancia a fallos es una característica esencial en sistemas distribuidos.
+Línea 004: Docker permite empaquetar aplicaciones en contenedores portables y reproducibles.
+Línea 005: MySQL es un sistema de gestión de bases de datos relacional ampliamente utilizado.
+Línea 006: Flask es un microframework de Python ideal para construir APIs REST.
+Línea 007: El particionamiento de datos mejora el rendimiento en entornos de alto tráfico.
+Línea 008: Los workers procesan fragmentos del archivo de forma paralela y simultánea.
+Línea 009: La comunicación entre contenedores se realiza a través de una red virtual de Docker.
+Línea 010: Docker Compose orquesta múltiples contenedores como un solo sistema unificado.
+Línea 011: El backend actúa como coordinador central del procesamiento distribuido.
+Línea 012: Cada worker recibe exactamente 20 líneas del archivo original de 100 líneas.
+Línea 013: La persistencia de datos garantiza que la información no se pierda al reiniciar.
+Línea 014: Una API REST permite la comunicación entre el frontend y el backend fácilmente.
+Línea 015: El frontend visualiza en tiempo real el estado de cada worker del sistema.
+Línea 016: Los sistemas distribuidos surgieron para superar las limitaciones del procesamiento centralizado.
+Línea 017: La escalabilidad horizontal permite agregar más nodos según la demanda del sistema.
+Línea 018: Python es uno de los lenguajes más populares para el desarrollo de backends modernos.
+Línea 019: La latencia de red es un factor crítico en el diseño de sistemas distribuidos.
+Línea 020: El balanceo de carga distribuye el trabajo equitativamente entre los nodos disponibles.
+Línea 021: Los contenedores Docker son más livianos que las máquinas virtuales tradicionales.
+Línea 022: La base de datos centralizada permite consultar resultados de todos los workers.
+Línea 023: El protocolo HTTP es el estándar de comunicación usado en las APIs REST modernas.
+Línea 024: JSON es el formato de intercambio de datos más utilizado en aplicaciones web actuales.
+Línea 025: La arquitectura de microservicios divide una aplicación en servicios pequeños e independientes.
+Línea 026: Nginx es un servidor web de alto rendimiento usado para servir archivos estáticos.
+Línea 027: El healthcheck de Docker verifica que un servicio esté listo antes de continuar.
+Línea 028: Las variables de entorno permiten configurar contenedores sin modificar el código fuente.
+Línea 029: El patrón productor-consumidor es fundamental en el diseño de sistemas distribuidos.
+Línea 030: La replicación de datos aumenta la disponibilidad y resistencia del sistema ante fallos.
+Línea 031: Un Dockerfile define los pasos necesarios para construir una imagen de contenedor.
+Línea 032: La red interna de Docker permite que los contenedores se comuniquen por nombre de servicio.
+Línea 033: Flask-CORS permite que el frontend acceda al backend desde un origen diferente.
+Línea 034: El particionamiento equitativo garantiza que ningún worker tenga más carga que otro.
+Línea 035: Los logs del sistema permiten monitorear el comportamiento de cada componente en tiempo real.
+Línea 036: La imagen python:3.11-slim reduce el tamaño del contenedor al mínimo necesario.
+Línea 037: MySQL usa el puerto 3306 por defecto para aceptar conexiones de clientes externos.
+Línea 038: El comando docker compose up construye e inicia todos los servicios definidos en el archivo.
+Línea 039: Las dependencias entre servicios se definen con depends_on en Docker Compose.
+Línea 040: Un sistema distribuido bien diseñado puede procesar millones de registros por segundo.
+Línea 041: La consistencia eventual es un modelo común en bases de datos distribuidas modernas.
+Línea 042: El frontend se comunica con el backend mediante peticiones fetch de JavaScript.
+Línea 043: Cada contenedor tiene su propio sistema de archivos aislado del resto del sistema.
+Línea 044: La imagen nginx:alpine es extremadamente liviana, ideal para servir archivos HTML.
+Línea 045: Las APIs REST usan verbos HTTP como GET, POST, PUT y DELETE para sus operaciones.
+Línea 046: El procesamiento paralelo reduce significativamente el tiempo total de ejecución de tareas.
+Línea 047: Docker Hub es el repositorio público donde se almacenan las imágenes de contenedores.
+Línea 048: mysql-connector-python es la librería oficial para conectar Python con MySQL.
+Línea 049: El archivo requirements.txt lista todas las dependencias necesarias para la aplicación.
+Línea 050: La mitad del archivo ha sido procesada exitosamente por los primeros workers del sistema.
+Línea 051: Los sistemas distribuidos modernos usan contenedores para garantizar entornos reproducibles.
+Línea 052: La segunda mitad del archivo continúa siendo procesada por los workers restantes del sistema.
+Línea 053: El tiempo de respuesta de una API es un indicador clave de rendimiento del sistema.
+Línea 054: Docker Desktop facilita el uso de contenedores en sistemas operativos Windows y Mac.
+Línea 055: La fragmentación de archivos es una técnica básica del procesamiento distribuido de datos.
+Línea 056: Cada registro en MySQL incluye el ID del worker que lo procesó y su timestamp exacto.
+Línea 057: Los sistemas de cola de mensajes como RabbitMQ complementan el procesamiento distribuido.
+Línea 058: La imagen oficial de MySQL en Docker Hub es mantenida por el equipo de Oracle activamente.
+Línea 059: El puerto 8000 es el puerto estándar usado por el backend Flask en este laboratorio.
+Línea 060: La tabla procesamiento almacena worker_id, numero de línea, contenido y timestamp.
+Línea 061: El manejo de errores robusto es esencial para que el sistema sea confiable en producción.
+Línea 062: Los reintentos automáticos permiten que los workers superen fallos temporales de conexión.
+Línea 063: Flask permite definir rutas y manejar peticiones HTTP con muy pocas líneas de código.
+Línea 064: La instrucción WORKDIR en el Dockerfile establece el directorio de trabajo del contenedor.
+Línea 065: Docker asigna IPs internas a cada contenedor dentro de la red virtual del proyecto.
+Línea 066: El frontend usa CSS Grid para organizar las tarjetas de los workers en columnas.
+Línea 067: Las animaciones del frontend ayudan a visualizar el flujo de datos entre componentes.
+Línea 068: La instrucción COPY del Dockerfile copia archivos del host al interior del contenedor.
+Línea 069: El comando pip install descarga e instala las librerías listadas en requirements.txt.
+Línea 070: Los sistemas distribuidos requieren sincronización cuidadosa para evitar condiciones de carrera.
+Línea 071: La variable MYSQL_HOST permite configurar el host de la base de datos por entorno.
+Línea 072: El endpoint /procesar recibe el archivo completo y lo distribuye entre los cinco workers.
+Línea 073: El endpoint /resultados consulta todos los registros almacenados en la base de datos MySQL.
+Línea 074: El endpoint /limpiar elimina todos los registros para permitir un nuevo procesamiento limpio.
+Línea 075: El endpoint /health verifica que el servicio esté disponible y respondiendo correctamente.
+Línea 076: La función init_db crea la tabla si no existe cada vez que el servicio arranca.
+Línea 077: Los workers esperan a que MySQL esté listo antes de intentar establecer la conexión.
+Línea 078: La instrucción CMD en el Dockerfile define el comando que se ejecuta al iniciar el contenedor.
+Línea 079: El campo AUTO_INCREMENT en MySQL genera IDs únicos automáticamente para cada registro.
+Línea 080: La cláusula ORDER BY en SQL organiza los resultados por worker y número de línea.
+Línea 081: Los sistemas distribuidos son la base tecnológica de plataformas como Google y Amazon.
+Línea 082: El procesamiento distribuido nació de la necesidad de manejar datos a escala masiva.
+Línea 083: Cada worker es un microservicio independiente que expone una API REST en el puerto 5000.
+Línea 084: La red laboratorio_default es creada automáticamente por Docker Compose al iniciar.
+Línea 085: Los contenedores se comunican usando el nombre del servicio como hostname de red.
+Línea 086: El frontend muestra una barra de progreso por cada worker durante el procesamiento.
+Línea 087: La función generarEjemplo crea 100 líneas de prueba sin necesidad de subir un archivo.
+Línea 088: El scroll automático del log lleva la vista al mensaje más reciente automáticamente.
+Línea 089: La tabla de resultados muestra todos los registros de MySQL con colores por worker.
+Línea 090: Docker garantiza que el sistema funcione igual en cualquier máquina donde se ejecute.
+Línea 091: El concepto de infraestructura como código permite versionar la configuración del sistema.
+Línea 092: Las diez líneas finales son procesadas por el worker número cinco del sistema distribuido.
+Línea 093: El timestamp registrado en MySQL indica exactamente cuándo fue procesada cada línea.
+Línea 094: La arquitectura cliente-servidor es la base del diseño de aplicaciones web modernas.
+Línea 095: Este laboratorio demuestra conceptos reales usados en empresas tecnológicas de gran escala.
+Línea 096: El procesamiento distribuido permite escalar horizontalmente agregando más workers fácilmente.
+Línea 097: Cada tecnología usada en este laboratorio tiene aplicaciones directas en la industria real.
+Línea 098: La combinación de Docker, Python y MySQL es una de las más usadas en el mundo actual.
+Línea 099: Los conocimientos adquiridos en este laboratorio son directamente aplicables en el mercado laboral.
+Línea 100: Procesamiento completado exitosamente — las 100 líneas fueron distribuidas entre 5 workers.

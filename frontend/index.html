@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Sistema de Procesamiento Distribuido</title>
+  <link href="https://fonts.googleapis.com/css2?family=Share+Tech+Mono&family=Exo+2:wght@300;400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<div class="container">
+
+  <header>
+    <div class="logo-line">// Sistema Distribuido v1.0 //</div>
+    <h1>Procesamiento Distribuido</h1>
+    <p class="subtitle">Workers Dinámicos · MySQL · Docker · Python</p>
+  </header>
+
+  <!-- BARRA DE ESTADO -->
+  <div class="status-bar">
+    <div class="status-item">
+      <div class="status-dot online" id="backendDot"></div>
+      <span id="backendStatus">Backend: verificando...</span>
+    </div>
+    <div class="status-item">
+      <div class="status-dot online"></div>
+      <span>MySQL: conectado</span>
+    </div>
+    <div class="status-item">
+      <span id="totalProcessed">Total registros: —</span>
+    </div>
+    <div class="status-item">
+      <span id="clock"></span>
+    </div>
+  </div>
+
+  <!-- ZONA DE CARGA -->
+  <div class="upload-zone" id="uploadZone" onclick="document.getElementById('fileInput').click()">
+    <div class="icon">📂</div>
+    <h3>Arrastra tu archivo de texto aquí</h3>
+    <p>o haz clic para seleccionarlo · Cualquier cantidad de líneas</p>
+    <input type="file" id="fileInput" accept=".txt">
+  </div>
+
+  <!-- INFO ARCHIVO CARGADO -->
+  <div id="fileInfo">
+    <div class="file-icon">📄</div>
+    <div class="file-details">
+      <div class="file-name" id="fileName">archivo.txt</div>
+      <div class="file-meta" id="fileMeta">— líneas · — bytes</div>
+    </div>
+    <div class="file-badge" id="fileBadge">LISTO</div>
+  </div>
+
+  <!-- SELECTOR DE WORKERS -->
+  <div class="worker-selector">
+    <label for="numWorkers">Número de workers a usar:</label>
+    <div class="selector-row">
+      <input type="range" id="numWorkers" min="1" max="5" value="5" oninput="actualizarWorkers(this.value)">
+      <span class="selector-value" id="workerValue">5 workers</span>
+    </div>
+    <p class="selector-hint" id="selectorHint">Cada worker procesará aproximadamente <span id="linesPerWorker">—</span> líneas</p>
+  </div>
+
+  <!-- BOTONES -->
+  <div class="btn-row">
+    <button class="btn btn-primary" id="btnProcesar" onclick="procesar()" disabled>▶ Procesar Archivo</button>
+    <button class="btn btn-secondary" onclick="verResultados()">📊 Ver Resultados DB</button>
+    <button class="btn btn-outline" onclick="limpiarDB()">🗑 Limpiar BD</button>
+    <button class="btn btn-outline" onclick="generarEjemplo()">⚡ Generar archivo demo</button>
+  </div>
+
+  <!-- TARJETAS DE WORKERS -->
+  <div class="workers-section" id="workersSection"></div>
+
+  <!-- LOG DEL SISTEMA -->
+  <div class="log-section">
+    <div class="log-header">
+      <div class="log-dot"></div>
+      Log del Sistema
+    </div>
+    <div class="log-body" id="logBody"></div>
+  </div>
+
+  <!-- TABLA DE RESULTADOS -->
+  <div class="results-section" id="resultsSection">
+    <div class="results-header">
+      <h3>📋 Datos en MySQL</h3>
+      <span class="results-count" id="resultsCount"></span>
+    </div>
+    <div class="results-body">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th><th>Worker</th><th>Línea #</th><th>Contenido</th><th>Timestamp</th>
+          </tr>
+        </thead>
+        <tbody id="resultsBody"></tbody>
+      </table>
+    </div>
+  </div>
+
+  <!-- ARQUITECTURA (al final, simplificada) -->
+  <div class="diagram">
+    <div class="diagram-title">// Arquitectura del Sistema</div>
+    <div class="arch-flow">
+      <div class="arch-step">📄<span>Archivo<br><small>N líneas</small></span></div>
+      <div class="arch-sep">→</div>
+      <div class="arch-step">⚙️<span>Backend<br><small>Python · Flask</small></span></div>
+      <div class="arch-sep">→</div>
+      <div class="arch-step">🐳<span>1–5 Workers<br><small>Docker</small></span></div>
+      <div class="arch-sep">→</div>
+      <div class="arch-step">🗄️<span>MySQL<br><small>Persistencia</small></span></div>
+    </div>
+  </div>
+
+</div>
+<script src="app.js"></script>
+</body>
+</html>

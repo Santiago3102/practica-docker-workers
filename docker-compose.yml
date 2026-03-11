@@ -1,0 +1,95 @@
+version: '3.8'
+
+services:
+  mysql:
+    image: mysql:8.0
+    container_name: mysql_db
+    environment:
+      MYSQL_ROOT_PASSWORD: laboratorio123
+      MYSQL_DATABASE: laboratorio
+    ports:
+      - "3307:3306"
+    healthcheck:
+      test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-u", "root", "-plaboratorio123"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+
+  worker1:
+    build: ./worker
+    container_name: worker_1
+    environment:
+      WORKER_ID: "1"
+      MYSQL_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5001:5000"
+
+  worker2:
+    build: ./worker
+    container_name: worker_2
+    environment:
+      WORKER_ID: "2"
+      MYSQL_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5002:5000"
+
+  worker3:
+    build: ./worker
+    container_name: worker_3
+    environment:
+      WORKER_ID: "3"
+      MYSQL_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5003:5000"
+
+  worker4:
+    build: ./worker
+    container_name: worker_4
+    environment:
+      WORKER_ID: "4"
+      MYSQL_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5004:5000"
+
+  worker5:
+    build: ./worker
+    container_name: worker_5
+    environment:
+      WORKER_ID: "5"
+      MYSQL_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "5005:5000"
+
+  backend:
+    build: ./backend
+    container_name: backend
+    environment:
+      MYSQL_HOST: mysql
+    depends_on:
+      mysql:
+        condition: service_healthy
+    ports:
+      - "8000:8000"
+
+  frontend:
+    build: ./frontend
+    container_name: frontend
+    ports:
+      - "8080:80"
+    depends_on:
+      - backend
