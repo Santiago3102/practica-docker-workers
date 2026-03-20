@@ -1,4 +1,4 @@
-// ===== CONFIGURACIÓN =====
+//  CONFIGURACIÓN 
 const BACKEND = 'http://localhost:8000';
 
 const WORKER_COLORS = {
@@ -12,13 +12,13 @@ const WORKER_COLORS = {
 let fileLines  = [];
 let numWorkers = 5;  // valor por defecto
 
-// ===== RELOJ =====
+//  RELOJ 
 setInterval(() => {
   document.getElementById('clock').textContent = new Date().toLocaleTimeString('es-CO');
 }, 1000);
 
 
-// ===== SELECTOR DE WORKERS =====
+//  SELECTOR DE WORKERS 
 function actualizarWorkers(valor) {
   numWorkers = parseInt(valor);
   document.getElementById('workerValue').textContent = `${numWorkers} worker${numWorkers > 1 ? 's' : ''}`;
@@ -38,7 +38,7 @@ function actualizarWorkers(valor) {
 }
 
 
-// ===== INICIALIZAR TARJETAS DE WORKERS =====
+//  INICIALIZAR TARJETAS DE WORKERS 
 function initWorkers(cantidad = 5) {
   const container = document.getElementById('workersSection');
   container.innerHTML = '';
@@ -58,7 +58,7 @@ function initWorkers(cantidad = 5) {
 }
 
 
-// ===== LOG DEL SISTEMA =====
+//  LOG DEL SISTEMA 
 function log(msg, type = '') {
   const body = document.getElementById('logBody');
   const time = new Date().toLocaleTimeString('es-CO');
@@ -70,7 +70,7 @@ function log(msg, type = '') {
 }
 
 
-// ===== VERIFICAR BACKEND =====
+//  VERIFICAR BACKEND 
 async function checkBackend() {
   try {
     const r = await fetch(`${BACKEND}/health`);
@@ -87,7 +87,7 @@ async function checkBackend() {
 }
 
 
-// ===== CARGA DE ARCHIVOS =====
+//  CARGA DE ARCHIVOS 
 document.getElementById('fileInput').addEventListener('change', e => {
   const file = e.target.files[0];
   if (file) loadFile(file);
@@ -154,7 +154,7 @@ function generarEjemplo() {
 }
 
 
-// ===== PROCESAR ARCHIVO =====
+//  PROCESAR ARCHIVO 
 async function procesar() {
   if (fileLines.length === 0) return;
 
@@ -225,7 +225,7 @@ async function procesar() {
 }
 
 
-// ===== VER RESULTADOS =====
+//  VER RESULTADOS 
 async function verResultados() {
   log('Consultando base de datos MySQL...', 'info');
   try {
@@ -266,7 +266,7 @@ async function verResultados() {
 }
 
 
-// ===== LIMPIAR BD =====
+//  LIMPIAR BD 
 async function limpiarDB() {
   if (!confirm('¿Limpiar todos los registros de la base de datos?')) return;
   try {
@@ -282,7 +282,7 @@ async function limpiarDB() {
 }
 
 
-// ===== INICIALIZACIÓN =====
+//  INICIALIZACIÓN 
 initWorkers(numWorkers);
 checkBackend();
 log('Sistema inicializado — esperando archivo...', 'info');

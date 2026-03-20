@@ -1,4 +1,4 @@
-/* ===== VARIABLES ===== */
+/*  VARIABLES  */
 :root {
   --bg: #050a12;
   --surface: #0a1628;
@@ -17,7 +17,7 @@
   --w5: #bf7fff;
 }
 
-/* ===== RESET & BASE ===== */
+/*  RESET & BASE  */
 * { margin: 0; padding: 0; box-sizing: border-box; }
 
 body {
@@ -41,7 +41,7 @@ body::before {
   z-index: 0;
 }
 
-/* ===== LAYOUT ===== */
+/*  LAYOUT  */
 .container {
   position: relative;
   z-index: 1;
@@ -50,7 +50,7 @@ body::before {
   padding: 24px;
 }
 
-/* ===== HEADER ===== */
+/*  HEADER  */
 header {
   text-align: center;
   padding: 32px 0 24px;
@@ -87,7 +87,7 @@ h1 {
   letter-spacing: 1px;
 }
 
-/* ===== STATUS BAR ===== */
+/*  STATUS BAR  */
 .status-bar {
   background: rgba(0,0,0,0.4);
   border: 1px solid var(--border);
@@ -118,7 +118,7 @@ h1 {
   box-shadow: 0 0 6px var(--green);
 }
 
-/* ===== DIAGRAMA DE ARQUITECTURA ===== */
+/*  DIAGRAMA DE ARQUITECTURA  */
 .diagram {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -194,7 +194,7 @@ h1 {
   50%       { box-shadow: 0 0 30px rgba(0,212,255,0.6); }
 }
 
-/* ===== ZONA DE CARGA ===== */
+/*  ZONA DE CARGA  */
 .upload-zone {
   border: 2px dashed var(--border);
   border-radius: 12px;
@@ -218,7 +218,7 @@ h1 {
 .upload-zone p { font-size: 13px; color: var(--dim); }
 #fileInput { display: none; }
 
-/* ===== INFO ARCHIVO ===== */
+/*  INFO ARCHIVO  */
 #fileInfo {
   display: none;
   background: var(--surface);
@@ -247,7 +247,7 @@ h1 {
   font-family: 'Share Tech Mono', monospace;
 }
 
-/* ===== BOTONES ===== */
+/*  BOTONES  */
 .btn-row {
   display: flex;
   gap: 12px;
@@ -304,7 +304,7 @@ h1 {
   color: var(--accent);
 }
 
-/* ===== WORKERS ===== */
+/*  WORKERS  */
 .workers-section {
   display: grid;
   grid-template-columns: repeat(5, 1fr);
@@ -408,7 +408,7 @@ h1 {
 .worker-status.processing { color: var(--worker-color); }
 .worker-status.error      { color: var(--red); }
 
-/* ===== LOG ===== */
+/*  LOG  */
 .log-section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -464,7 +464,7 @@ h1 {
 .log-msg.info    { color: var(--accent); }
 .log-msg.warn    { color: var(--yellow); }
 
-/* ===== TABLA DE RESULTADOS ===== */
+/*  TABLA DE RESULTADOS  */
 .results-section {
   background: var(--surface);
   border: 1px solid var(--border);
@@ -533,7 +533,7 @@ tr:hover td { background: rgba(0,212,255,0.03); }
   font-weight: 600;
 }
 
-/* ===== DIAGRAMA SIMPLIFICADO (al final) ===== */
+/*  DIAGRAMA SIMPLIFICADO (al final)  */
 .arch-flow {
   display: flex;
   align-items: center;
@@ -570,7 +570,7 @@ tr:hover td { background: rgba(0,212,255,0.03); }
   margin-bottom: 20px;
 }
 
-/* ===== SELECTOR DE WORKERS ===== */
+/*  SELECTOR DE WORKERS  */
 .worker-selector {
   background: var(--surface);
   border: 1px solid var(--border);
